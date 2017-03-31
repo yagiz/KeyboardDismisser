@@ -35,6 +35,15 @@ open class KeyboardDismisser
     open var buttonBottomMargin: CGFloat = 10.0
     
     open var isDisabled = false
+    {
+        didSet
+        {
+            if self.dismissButton != nil
+            {
+                self.dismissButton.isHidden = isDisabled
+            }
+        }
+    }
     
     var dismissButton: UIButton! = nil
     var keyboardWindow: UIWindow! = nil
@@ -68,6 +77,7 @@ open class KeyboardDismisser
             self.dismissButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.buttonSize.width, height: self.buttonSize.height))
             self.dismissButton.setImage(self.buttonImage, for: .normal)
             self.dismissButton.addTarget(self, action: #selector(self.dismissButtonAction), for: .touchUpInside)
+            self.dismissButton.alpha = 0
         }
     }
     
@@ -120,9 +130,12 @@ open class KeyboardDismisser
             dismissButtonFrame.origin.x = beginKeyboardFrame.size.width - self.dismissButton.frame.size.width - self.buttonRightMargin
             dismissButtonFrame.origin.y = beginKeyboardFrame.origin.y - self.dismissButton.frame.size.height - self.buttonBottomMargin
             
-            UIView.setAnimationsEnabled(false)
-            self.dismissButton.frame = dismissButtonFrame
-            UIView.setAnimationsEnabled(true)
+            if self.dismissButton.alpha == 0
+            {
+                UIView.setAnimationsEnabled(false)
+                self.dismissButton.frame = dismissButtonFrame
+                UIView.setAnimationsEnabled(true)
+            }
             
             self.dismissButton.alpha = beginAlpha
             
