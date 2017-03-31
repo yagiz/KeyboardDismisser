@@ -1,5 +1,5 @@
 # KeyboardDismisser
-KeyboardDismisser is a little Swift 3.0 pod that adds a button over keyboard so that users can dismiss keyboard easly.
+KeyboardDismisser is a little Swift 3.0 pod that adds a button over keyboard so that users can dismiss keyboard easily.
 
 ### Installation
 
@@ -11,7 +11,7 @@ pod 'KeyboardDismisser'
 Just download or clone the repo and move Classes folder to your project.
 
 ### Usage
-Just call ```attach()``` method in AppDelegate.swift or in any other your root class.
+Call ```attach()``` method in AppDelegate.swift or in any other your root class.
 ```swift
 
 import UIKit
