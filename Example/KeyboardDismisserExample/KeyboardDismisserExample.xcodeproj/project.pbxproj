@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC9AB88F1E8EA27D00D92A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9AB88E1E8EA27D00D92A79 /* AppDelegate.swift */; };
+		BC9AB8911E8EA27D00D92A79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9AB8901E8EA27D00D92A79 /* ViewController.swift */; };
+		BC9AB8941E8EA27D00D92A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9AB8921E8EA27D00D92A79 /* Main.storyboard */; };
+		BC9AB8961E8EA27D00D92A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC9AB8951E8EA27D00D92A79 /* Assets.xcassets */; };
+		BC9AB8991E8EA27D00D92A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9AB8971E8EA27D00D92A79 /* LaunchScreen.storyboard */; };
+		BC9AB8A81E8EA29200D92A79 /* KeyboardDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9AB8A61E8EA29200D92A79 /* KeyboardDismisser.swift */; };
+		BC9AB8A91E8EA29200D92A79 /* KeyboardDismisserIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9AB8A71E8EA29200D92A79 /* KeyboardDismisserIcon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BC9AB88B1E8EA27D00D92A79 /* KeyboardDismisserExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardDismisserExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC9AB88E1E8EA27D00D92A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC9AB8901E8EA27D00D92A79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC9AB8931E8EA27D00D92A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC9AB8951E8EA27D00D92A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC9AB8981E8EA27D00D92A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC9AB89A1E8EA27D00D92A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9AB8A61E8EA29200D92A79 /* KeyboardDismisser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardDismisser.swift; sourceTree = "<group>"; };
+		BC9AB8A71E8EA29200D92A79 /* KeyboardDismisserIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardDismisserIcon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC9AB8881E8EA27C00D92A79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC9AB8821E8EA27C00D92A79 = {
+			isa = PBXGroup;
+			children = (
+				BC9AB88D1E8EA27D00D92A79 /* KeyboardDismisserExample */,
+				BC9AB88C1E8EA27D00D92A79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC9AB88C1E8EA27D00D92A79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC9AB88B1E8EA27D00D92A79 /* KeyboardDismisserExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC9AB88D1E8EA27D00D92A79 /* KeyboardDismisserExample */ = {
+			isa = PBXGroup;
+			children = (
+				BC9AB8A51E8EA29200D92A79 /* Classes */,
+				BC9AB88E1E8EA27D00D92A79 /* AppDelegate.swift */,
+				BC9AB8901E8EA27D00D92A79 /* ViewController.swift */,
+				BC9AB8921E8EA27D00D92A79 /* Main.storyboard */,
+				BC9AB8951E8EA27D00D92A79 /* Assets.xcassets */,
+				BC9AB8971E8EA27D00D92A79 /* LaunchScreen.storyboard */,
+				BC9AB89A1E8EA27D00D92A79 /* Info.plist */,
+			);
+			path = KeyboardDismisserExample;
+			sourceTree = "<group>";
+		};
+		BC9AB8A51E8EA29200D92A79 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC9AB8A61E8EA29200D92A79 /* KeyboardDismisser.swift */,
+				BC9AB8A71E8EA29200D92A79 /* KeyboardDismisserIcon.png */,
+			);
+			name = Classes;
+			path = ../../../Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC9AB88A1E8EA27C00D92A79 /* KeyboardDismisserExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC9AB89D1E8EA27D00D92A79 /* Build configuration list for PBXNativeTarget "KeyboardDismisserExample" */;
+			buildPhases = (
+				BC9AB8871E8EA27C00D92A79 /* Sources */,
+				BC9AB8881E8EA27C00D92A79 /* Frameworks */,
+				BC9AB8891E8EA27C00D92A79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardDismisserExample;
+			productName = KeyboardDismisserExample;
+			productReference = BC9AB88B1E8EA27D00D92A79 /* KeyboardDismisserExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC9AB8831E8EA27C00D92A79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Yagiz Gurgul";
+				TargetAttributes = {
+					BC9AB88A1E8EA27C00D92A79 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 94RE284J9Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BC9AB8861E8EA27C00D92A79 /* Build configuration list for PBXProject "KeyboardDismisserExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC9AB8821E8EA27C00D92A79;
+			productRefGroup = BC9AB88C1E8EA27D00D92A79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC9AB88A1E8EA27C00D92A79 /* KeyboardDismisserExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC9AB8891E8EA27C00D92A79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC9AB8991E8EA27D00D92A79 /* LaunchScreen.storyboard in Resources */,
+				BC9AB8A91E8EA29200D92A79 /* KeyboardDismisserIcon.png in Resources */,
+				BC9AB8961E8EA27D00D92A79 /* Assets.xcassets in Resources */,
+				BC9AB8941E8EA27D00D92A79 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC9AB8871E8EA27C00D92A79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC9AB8911E8EA27D00D92A79 /* ViewController.swift in Sources */,
+				BC9AB88F1E8EA27D00D92A79 /* AppDelegate.swift in Sources */,
+				BC9AB8A81E8EA29200D92A79 /* KeyboardDismisser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BC9AB8921E8EA27D00D92A79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC9AB8931E8EA27D00D92A79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC9AB8971E8EA27D00D92A79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC9AB8981E8EA27D00D92A79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC9AB89B1E8EA27D00D92A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC9AB89C1E8EA27D00D92A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC9AB89E1E8EA27D00D92A79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94RE284J9Z;
+				INFOPLIST_FILE = KeyboardDismisserExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yagiz.lab.KeyboardDismisserExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BC9AB89F1E8EA27D00D92A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94RE284J9Z;
+				INFOPLIST_FILE = KeyboardDismisserExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yagiz.lab.KeyboardDismisserExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC9AB8861E8EA27C00D92A79 /* Build configuration list for PBXProject "KeyboardDismisserExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC9AB89B1E8EA27D00D92A79 /* Debug */,
+				BC9AB89C1E8EA27D00D92A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC9AB89D1E8EA27D00D92A79 /* Build configuration list for PBXNativeTarget "KeyboardDismisserExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC9AB89E1E8EA27D00D92A79 /* Debug */,
+				BC9AB89F1E8EA27D00D92A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC9AB8831E8EA27C00D92A79 /* Project object */;
+}
