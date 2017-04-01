@@ -47,13 +47,14 @@ open class KeyboardDismisser
     
     var dismissButton: UIButton! = nil
     var keyboardWindow: UIWindow! = nil
-    
+    var isKeyboardShown: Bool = false
     
     open func attach()
     {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         
         self.removeDismissButton()
         self.createDismissButton()
@@ -100,23 +101,36 @@ open class KeyboardDismisser
     
     @objc func keyboardWillShow(notification: NSNotification)
     {
-        self.slideDismissButtonWithKeyboard(notification: notification, beginAlpha: 0, endAlpha: 1)
+        var snapToBeginFrame = false
+        
+        if self.isKeyboardShown == false
+        {
+            snapToBeginFrame = true
+        }
+        
+        self.slideDismissButtonWithKeyboard(notification: notification, snapToBeginFrame: snapToBeginFrame, beginAlpha: 0, endAlpha: 1)
+        
+        self.isKeyboardShown = true
     }
     
     
     @objc func keyboardWillHide(notification: NSNotification)
     {
-        self.slideDismissButtonWithKeyboard(notification: notification, beginAlpha: self.dismissButton.alpha, endAlpha: 0)
+        var snapToBeginFrame = false
+        
+        if self.isKeyboardShown == true
+        {
+            snapToBeginFrame = true
+        }
+        
+        self.slideDismissButtonWithKeyboard(notification: notification, snapToBeginFrame: snapToBeginFrame, beginAlpha: 1, endAlpha: 0)
+        
+        self.isKeyboardShown = false
     }
     
     
-    func slideDismissButtonWithKeyboard(notification: NSNotification, beginAlpha: CGFloat, endAlpha: CGFloat)
+    func slideDismissButtonWithKeyboard(notification: NSNotification, snapToBeginFrame: Bool, beginAlpha: CGFloat, endAlpha: CGFloat)
     {
-        if self.isDisabled == true
-        {
-            return
-        }
-        
         if let userInfo = notification.userInfo
         {
             self.refreshKeyboardWindow()
@@ -130,29 +144,33 @@ open class KeyboardDismisser
             dismissButtonFrame.origin.x = beginKeyboardFrame.size.width - self.dismissButton.frame.size.width - self.buttonRightMargin
             dismissButtonFrame.origin.y = beginKeyboardFrame.origin.y - self.dismissButton.frame.size.height - self.buttonBottomMargin
             
-            if self.dismissButton.alpha == 0
+            if snapToBeginFrame == true
             {
                 UIView.setAnimationsEnabled(false)
                 self.dismissButton.frame = dismissButtonFrame
+                self.dismissButton.alpha = beginAlpha
                 UIView.setAnimationsEnabled(true)
             }
             
-            self.dismissButton.alpha = beginAlpha
-            
-            self.animateWithKeyboardAnimationProperties(userInfo: userInfo)
-            {
+            self.animateWithKeyboardAnimationProperties(userInfo: userInfo, animationBlock: { 
+                
                 var dismissButtonFrame = self.dismissButton.frame;
                 dismissButtonFrame.origin.x = endKeyboardFrame.width - self.dismissButton.frame.size.width - self.buttonRightMargin
                 dismissButtonFrame.origin.y = endKeyboardFrame.origin.y - self.dismissButton.frame.size.height - self.buttonBottomMargin
                 self.dismissButton.frame = dismissButtonFrame
                 
                 self.dismissButton.alpha = endAlpha
-            }
+                
+            }, completion: { (completed) in
+                
+                
+                
+            })
         }
     }
     
     
-    func animateWithKeyboardAnimationProperties(userInfo:[AnyHashable : Any], animationBlock:@escaping () -> ())
+    func animateWithKeyboardAnimationProperties(userInfo:[AnyHashable : Any], animationBlock:@escaping () -> (), completion: ((Bool) -> Swift.Void)? = nil)
     {
         let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
         
@@ -165,7 +183,7 @@ open class KeyboardDismisser
             
             animationBlock()
             
-        }, completion: nil)
+        }, completion: completion)
     }
     
     
