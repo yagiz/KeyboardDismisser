@@ -11,7 +11,7 @@ pod 'KeyboardDismisser'
 Just download or clone the repo and move Classes folder to your project.
 
 ### Usage
-Call ```attach()``` method in AppDelegate.swift or in any other your root class.
+Call ```attach()``` method of singleton KeyboardDismisser instance in ```AppDelegate.swift``` or in any other root class you have.
 ```swift
 
 import UIKit
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 #### Customizing Dismissing Button
-You can change the button image, size or margins. You should do any customisation before calling ```attach()``` method
+You can change the button image, size or margins. You should do any customisation before calling ```attach()``` method.
 ```swift
 import UIKit
 import KeyboardDismisser
@@ -58,7 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-
+#### Disabling/Enabling
+In some cases you may want to disable KeyboardDismisser. For example if you add custom textfield accessories you may want to disable it. To do so you can use ```isDisabled``` property.
+```swift
+KeyboardDismisser.shared.isDisabled = true
+```
 
 License
 ----
