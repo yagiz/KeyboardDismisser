@@ -24,7 +24,7 @@
 
 import UIKit
 
-open class KeyboardDismisser
+public class KeyboardDismisser
 {
     open static let shared:KeyboardDismisser = KeyboardDismisser()
     
