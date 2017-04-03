@@ -195,6 +195,9 @@ open class KeyboardDismisser
     
     open static func dismissKeyboard()
     {
-        UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
+        for window in UIApplication.shared.windows
+        {
+            window.endEditing(true)
+        }
     }
 }
