@@ -1,5 +1,5 @@
 # KeyboardDismisser
-KeyboardDismisser is a little Swift 3.0 pod that adds a button over keyboard so that users can dismiss keyboard easily.
+KeyboardDismisser is a little Swift 4.x pod that adds a button over keyboard so that users can dismiss keyboard easily.
 
 ### Preview
 ![](https://github.com/yagiz/KeyboardDismisser/blob/master/Screenshots/preview.gif?raw=true)
