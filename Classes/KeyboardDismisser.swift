@@ -26,7 +26,7 @@ import UIKit
 
 open class KeyboardDismisser : NSObject
 {
-    open static let shared:KeyboardDismisser = KeyboardDismisser()
+    public static let shared:KeyboardDismisser = KeyboardDismisser()
     
     
     open var buttonImage: UIImage = UIImage(named: "KeyboardDismisserIcon.png", in: Bundle(for: KeyboardDismisser.self), compatibleWith: nil)!
@@ -35,7 +35,7 @@ open class KeyboardDismisser : NSObject
     open var buttonBottomMargin: CGFloat = 10.0
     
     open var isDisabled = false
-    {
+        {
         didSet
         {
             if self.dismissButton != nil
@@ -51,9 +51,9 @@ open class KeyboardDismisser : NSObject
     
     open func attach()
     {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
         self.removeDismissButton()
@@ -63,9 +63,9 @@ open class KeyboardDismisser : NSObject
     
     open func detach()
     {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.removeDismissButton()
     }
@@ -136,8 +136,8 @@ open class KeyboardDismisser : NSObject
             self.refreshKeyboardWindow()
             self.keyboardWindow.addSubview(self.dismissButton)
             
-            let beginKeyboardFrame = self.keyboardWindow.convert(((userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue)!,from: nil)
-            let endKeyboardFrame = self.keyboardWindow.convert(((userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!,from: nil)
+            let beginKeyboardFrame = self.keyboardWindow.convert(((userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue)!,from: nil)
+            let endKeyboardFrame = self.keyboardWindow.convert(((userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!,from: nil)
             
             
             var dismissButtonFrame = self.dismissButton.frame
@@ -152,7 +152,7 @@ open class KeyboardDismisser : NSObject
                 UIView.setAnimationsEnabled(true)
             }
             
-            self.animateWithKeyboardAnimationProperties(userInfo: userInfo, animationBlock: { 
+            self.animateWithKeyboardAnimationProperties(userInfo: userInfo, animationBlock: {
                 
                 var dismissButtonFrame = self.dismissButton.frame;
                 dismissButtonFrame.origin.x = endKeyboardFrame.width - self.dismissButton.frame.size.width - self.buttonRightMargin
@@ -172,12 +172,12 @@ open class KeyboardDismisser : NSObject
     
     func animateWithKeyboardAnimationProperties(userInfo:[AnyHashable : Any], animationBlock:@escaping () -> (), completion: ((Bool) -> Swift.Void)? = nil)
     {
-        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
         
-        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
         
-        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
         
         UIView.animate(withDuration: duration, delay: TimeInterval(0), options: animationCurve, animations: {
             
@@ -193,7 +193,7 @@ open class KeyboardDismisser : NSObject
     }
     
     
-    open static func dismissKeyboard()
+    public static func dismissKeyboard()
     {
         for window in UIApplication.shared.windows
         {
